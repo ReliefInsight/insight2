@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140208215756) do
+ActiveRecord::Schema.define(version: 20140208222730) do
+
+  create_table "request_relations", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "amount"
+    t.string   "dstatus"
+    t.datetime "request_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "requests", force: true do |t|
     t.integer  "user_id"
