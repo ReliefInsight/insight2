@@ -4,5 +4,6 @@ class WelcomeController < ApplicationController
   end
 
   def request_list
+    @request_list = Asking.all
   end
 end

@@ -1,9 +1,9 @@
-class CreateRequests < ActiveRecord::Migration
+class CreateRequestRelations < ActiveRecord::Migration
   def change
-    create_table :requests do |t|
+    create_table :request_relations do |t|
       t.integer :user_id
       t.integer :amount
-      t.string :pstatus
+      t.string :dstatus
       t.datetime :request_at
 
       t.timestamps
