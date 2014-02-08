@@ -1,4 +1,5 @@
 <h1> Request List </h1>
+
 <%-@request_list.each do |req|%>
   <%=req.user.name%>
   <%=req.user.address%>
@@ -9,3 +10,25 @@
 
 <%end%>  
 
+<div id='form', class='hide'>
+  <%= form_tag '/' do%>
+    <%= label_tag 'request', 'How much you want to request:'%>
+    <%= text_field_tag 'amount' %>
+    <%= submit_tag%>
+  <%end%>
+  
+
+</div>
+
+<%=link_to 'add more request', '#', id: 'show_form'%>
+
+<script>
+  $(document).ready(function(){
+    $('#show_form').click(function(){
+      console.log('hello');
+      $('#show_form').hide();
+      return false;
+    });
+  })
+
+</script>
