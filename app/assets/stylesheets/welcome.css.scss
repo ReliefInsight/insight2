@@ -1,3 +1,39 @@
 // Place all the styles related to the welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+.homepage-cover {
+	background: url('homepage-map1.png');
+	background-repeat:no-repeat;
+	background-size:cover;
+	background-position:center;
+	height: 500px;
+}
+
+.container-top {
+	height: 500px;
+}
+
+.navbar-header {
+	width: 100%;
+}
+
+.login {
+	margin: 0px 20px !important;
+}
+
+.logo {
+	-webkit-transform: rotate(-9deg);
+	-moz-transform: rotate(7deg);
+	-ms-transform: rotate(7deg);
+	-o-transform: rotate(7deg);
+	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+	transform: rotate(7deg);
+	position: relative;
+	top: 30px;
+	left: 50px;
+	text-shadow: 5px 5px 7px black;
+}
+
