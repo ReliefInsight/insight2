@@ -1,6 +1,11 @@
 <h1> Request List </h1>
 <%-@request_list.each do |req|%>
   <%=req.user.name%>
+  <%=req.user.address%>
+  <%=req.amount%>
+  <%=req.dstatus%>
+  <%=time_ago_in_words req.request_at%>
+
 
 <%end%>  
 
