@@ -1,4 +1,5 @@
 Insight2::Application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
   devise_for :users
   get '/wel', to: 'welcome#index'
   get '/req_list', to: 'welcome#request_list', as: "request_list"

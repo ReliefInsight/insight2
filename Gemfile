@@ -46,3 +46,4 @@ end
 # Use debugger
 gem 'debugger', group: [:development, :test]
 gem 'pry-nav', group: :development
+gem 'rails_admin'
