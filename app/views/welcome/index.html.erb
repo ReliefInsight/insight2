@@ -9,7 +9,12 @@
 
             <ul class="unstyled white navbar-header left">
                 <li class="logo"><a href="#" class="uppercase size-xl">Relief Insight</a></li>
-                <li class="right uppercase login">Login</li>
+                <% if user_signed_in? %>
+                    <%= link_to "Logout", destroy_user_session_path, class: "right uppercase login" %>
+                    <%= link_to "Requests", request_list_path, class: "right uppercase login" %>
+                <% else %>
+                    <%= link_to "Login", new_user_session_path, class: "right uppercase login" %>
+                <% end %>
                 <li class="right uppercase login">Register</li>
             </ul>
 
