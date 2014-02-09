@@ -20,12 +20,12 @@
 
 <%-@request_list.each do |req|%>
 
-    <button class="red-button uppercase size-medium"><%=link_to 'Make a new request', '#', id: 'show_form'%></button>
+    <button class="red-button uppercase size-medium new-request"><%=link_to 'Make a new request', '#', id: 'show_form'%></button>
     <div id='form', class='hide'>
-  <%= form_tag '/' do%>
+  <%= form_tag '/add_request' do%>
     <%= label_tag 'request', 'What do you want to request?'%>
     <%= text_field_tag 'amount' %>
-    <%= submit_tag %>
+    <button class="red-button uppercase size-medium"><%=link_to 'Submit', '#', id: 'submit_request'%></button>
 
   <%end%>
 
@@ -57,8 +57,8 @@
 <script>
   $(document).ready(function(){
     $('#show_form').click(function(){
-      console.log('hello');
-      $('.red-button').hide();
+      #console.log('hello')
+      $('.new-request').hide();
       $('#form').fadeIn(200);
       return false;
     });
