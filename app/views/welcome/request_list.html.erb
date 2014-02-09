@@ -18,26 +18,26 @@
 
 
 
+<button class="red-button uppercase size-medium new-request"><%=link_to 'Make a new request', '#', id: 'show_form'%></button>
 <%-@request_list.each do |req|%>
 
-    <button class="red-button uppercase size-medium new-request"><%=link_to 'Make a new request', '#', id: 'show_form'%></button>
     <div id='form', class='hide'>
-  <%= form_tag '/add_request' do%>
-    <%= label_tag 'request', 'What do you want to request?'%>
-    <%= text_field_tag 'amount' %>
-    <button class="red-button uppercase size-medium"><%=link_to 'Submit', '#', id: 'submit_request'%></button>
+      <%= form_tag '/add_request' do%>
+        <label for="amount"> <span class="size-large">What do you want to request?</span></label>
+        <%= text_field_tag 'amount' %>
+        <button class="red-button uppercase size-medium"><%=link_to 'Submit', '#', id: 'submit_request'%></button>
 
-  <%end%>
+       <%end%>
 
-</div>
+    </div>
 
   <div class="item">
   <h2><%=req.user.name%> (<%=req.user.address%>)</h2>
   <span class="left right-1">
-    <img src=<%=req.user.avatar_url%>>
+    <img src=<%=req.user.avatar_url%> width="100"/>
   </span>
 
-  <h2><%=req.amount%></h2>
+  <h2>Sardines (<%=req.amount%>) cans</h2>
    <div>
   <%=req.dstatus%>
  
@@ -57,7 +57,7 @@
 <script>
   $(document).ready(function(){
     $('#show_form').click(function(){
-      #console.log('hello')
+      console.log('hello')
       $('.new-request').hide();
       $('#form').fadeIn(200);
       return false;
