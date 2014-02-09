@@ -20,11 +20,13 @@
 
 <button class="red-button uppercase size-medium new-request"><%=link_to 'Make a new request', '#', id: 'show_form'%></button>
 <div id='form', class='hide'>
-  <%= form_tag '/add_request' do%>
-    <label for="amount"> <span class="size-large">What do you want to request?</span></label>
-    <%= text_field_tag 'amount' %>
-    <button class="red-button uppercase size-medium"><%=link_to 'Submit', '#', id: 'submit_request'%></button>
-  <%end%>
+  <form id='add_request' method="post" onsubmit="return false;">
+    <label for="amount">
+      <span class="size-large">What do you want to request?</span>
+    </label>
+    <input type="text" name="amount" id="amount" />
+    <button class="red-button uppercase size-medium" type="submit" id="submit_request">Submit</button>
+  </form>
 </div>
 
 <%-@request_list.each do |req|%>
@@ -37,28 +39,37 @@
   <h2>Sardines (<%=req.amount%>) cans</h2>
    <div>
   <%=req.dstatus%>
- 
+
   <%=time_ago_in_words req.request_at%> ago
   </div>
 </div><!--item-->
 
 <div class="clear"></div>
 
-<%end%>  
-
-
-
+<%end%>
 
 </div>
 
 <script>
   $(document).ready(function(){
     $('#show_form').click(function(){
-      console.log('hello')
       $('.new-request').hide();
       $('#form').fadeIn(200);
       return false;
     });
-  })
 
+    $('#submit_request').click(function(){
+      var amount = $("#amount").val();
+      $.ajax({
+        url: "http://<%= request.raw_host_with_port %>/add_request",
+        type: "POST",
+        data: "amount="+amount,
+        success: function (res) {
+          console.log(res);
+          $("div.container").append("<div class='item'><h2>"+ res.title +"</h2><span class='left right-1'><img src='"+res.avatar+"' width='100'></span><h2>"+res.amount+"</h2><div>less than a minute ago</div></div><div class='clear'></div>");
+          $("#amount").val("");
+        }
+      });
+    });
+  })
 </script>

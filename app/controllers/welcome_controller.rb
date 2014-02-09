@@ -9,7 +9,10 @@ class WelcomeController < ApplicationController
 
   def add_request
     current_user.generate_request(request_params)
-    redirect_to :req_list
+    respons = {title: current_user.name + '(' + current_user.address + ')',
+               avatar: current_user.avatar_url,
+               amount: current_user.request_relations.last.amount}
+    render :json => respons.to_json
   end
 
   private
