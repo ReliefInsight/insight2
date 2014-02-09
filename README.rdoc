@@ -1,11 +1,13 @@
-== README
+README
+About this project:
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This project is built on the RELIEF INSIGHT platform, with Ruby on Rails. Implement cool features (see the last paragraph for ideas), contribute to this repo and help to create access to disaster resilience items for those in need. _ RELIEFINSIGHT
+
+This application is a two-sided Marketplace for disaster resilience.
 
 Things you may want to cover:
 
-* Ruby version
+* Ruby version: 1.9
 
 * System dependencies
 
@@ -22,6 +24,9 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+Originally created by () []
+Edited by E-V-E [https://github.com/E-V-E]
+
 
 
 Please feel free to use a different markup language if you do not plan to run
