@@ -7,6 +7,6 @@ class User < ActiveRecord::Base
   has_many :request_relations
 
   def generate_request request_params
-    request_relations.create(request_params, request_at: Time.now)
+    request_relations.create(amount: request_params[:amount], request_at: Time.now)
   end
 end

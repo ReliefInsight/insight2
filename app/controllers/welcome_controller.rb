@@ -9,6 +9,7 @@ class WelcomeController < ApplicationController
 
   def add_request
     current_user.generate_request(request_params)
+    redirect_to :req_list
   end
 
   private
