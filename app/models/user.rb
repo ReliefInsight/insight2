@@ -5,4 +5,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :request_relations
+
+  def generate_request request_params
+    request_relations.create(request_params, request_at: Time.now)
+  end
 end

@@ -13,6 +13,6 @@ class WelcomeController < ApplicationController
 
   private
   def request_params
-    params.require(:req).permit(:amount)
+    params.permit(:amount)
   end
 end

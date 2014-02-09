@@ -2,6 +2,7 @@ Insight2::Application.routes.draw do
   devise_for :users
   get '/wel', to: 'welcome#index'
   get '/req_list', to: 'welcome#request_list'
+  post '/add_request', to: 'welcome#add_request'
   root 'welcome#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
