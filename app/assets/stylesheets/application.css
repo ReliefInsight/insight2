@@ -64,6 +64,14 @@
 }
 
 /**Colors**/
+
+.normal-cover {
+	background: url('homepage-map2.png');
+	background-repeat:no-repeat;
+	background-size:cover;
+	background-position:center;
+	height: 500px;
+}
 .white {
 	color: white;
 }
@@ -134,18 +142,62 @@
 }
 
 p {
-	padding: 10px;
+	padding: 30px 0px;
+	margin: 0;
 }
 
 .hide {
 	display: none;
 }
 
+/**Buttons**/
+button.red-button, button[type="submit"] {
+	background: #f20200;
+	color: white;
+	border: none;
+	padding: 15px 30px;
+	-moz-border-radius: 20px;
+	-webkit-border-radius; 20px;
+	border-radius: 20px;
+	box-shadow: 1px 1px 5px #ccc;
+	-moz-box-shadow: 1px 1px 5px #ccc;
+	-webkit-box-shadow: 1px 1px 5px #ccc;
+}
+button.red-button:hover, button[type="submit"]:hover {
+	position: relative;
+	top: 1px;
+	left: 1px;
+	cursor: pointer;
+}
+
+.right-1 {
+	margin-right: 10px;
+
+}
+
+div.item {
+	border: 2px dashed #ccc;
+	padding: 10px;
+	width: 400px;
+	margin: 10px 0;
+}
+
+h1, h2, h3, h4, h5 {
+	margin: 0;
+}
+
+/**Forms**/
+input[type="text"] {
+	padding: 7px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	border: 1px solid #ccc;
+	font-size: 16px;
+
+}
 
 @media all and (max-width: 747px) {
-  body {
-    background: #ccc;
-  }
   .homepage-cover {
 	height: 200px !important;
 	}

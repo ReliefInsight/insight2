@@ -1,33 +1,65 @@
-<h1> Request List </h1>
+  <header class="normal-cover"
+    <nav>
+          
+
+            <ul class="unstyled white navbar-header left">
+                <li class="logo"><a href="#" class="uppercase size-xl">Relief Insight</a></li>
+                <li class="right uppercase login">Log Out</li>
+                <li class="right uppercase login">Account Settings</li>
+                <li class="right uppercase login">Dashboard</li>
+            </ul>
+
+        </nav>
+  </header>
+
+<div class="container">
+<p>You are currently viewing all requests in the marketplace.   </p>
+
+
+
 
 <%-@request_list.each do |req|%>
-  <%=req.user.name%>
-  <%=req.user.address%>
-  <%=req.amount%>
-  <%=req.dstatus%>
-  <%=time_ago_in_words req.request_at%>
 
-
-<%end%>  
-
-<div id='form', class='hide'>
+    <button class="red-button uppercase size-medium"><%=link_to 'Make a new request', '#', id: 'show_form'%></button>
+    <div id='form', class='hide'>
   <%= form_tag '/' do%>
-    <%= label_tag 'request', 'How much you want to request:'%>
+    <%= label_tag 'request', 'What do you want to request?'%>
     <%= text_field_tag 'amount' %>
-    <%= submit_tag%>
+    <%= submit_tag %>
+
   <%end%>
-  
 
 </div>
 
-<%=link_to 'add more request', '#', id: 'show_form'%>
+  <div class="item">
+  <h2><%=req.user.name%> (<%=req.user.address%>)</h2>
+  <span class="left right-1">
+    <img src=<%=req.user.avatar_url%>>
+  </span>
+
+  <h2><%=req.amount%></h2>
+   <div>
+  <%=req.dstatus%>
+ 
+  <%=time_ago_in_words req.request_at%> ago
+  </div>
+</div><!--item-->
+
+<div class="clear"></div>
+
+<%end%>  
+
+
+
+
+</div>
 
 <script>
   $(document).ready(function(){
     $('#show_form').click(function(){
       console.log('hello');
-      $('#show_form').hide();
-      $('#form').show();
+      $('.red-button').hide();
+      $('#form').fadeIn(200);
       return false;
     });
   })
