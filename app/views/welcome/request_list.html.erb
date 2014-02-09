@@ -19,18 +19,15 @@
 
 
 <button class="red-button uppercase size-medium new-request"><%=link_to 'Make a new request', '#', id: 'show_form'%></button>
+<div id='form', class='hide'>
+  <%= form_tag '/add_request' do%>
+    <label for="amount"> <span class="size-large">What do you want to request?</span></label>
+    <%= text_field_tag 'amount' %>
+    <button class="red-button uppercase size-medium"><%=link_to 'Submit', '#', id: 'submit_request'%></button>
+  <%end%>
+</div>
+
 <%-@request_list.each do |req|%>
-
-    <div id='form', class='hide'>
-      <%= form_tag '/add_request' do%>
-        <label for="amount"> <span class="size-large">What do you want to request?</span></label>
-        <%= text_field_tag 'amount' %>
-        <button class="red-button uppercase size-medium"><%=link_to 'Submit', '#', id: 'submit_request'%></button>
-
-       <%end%>
-
-    </div>
-
   <div class="item">
   <h2><%=req.user.name%> (<%=req.user.address%>)</h2>
   <span class="left right-1">
