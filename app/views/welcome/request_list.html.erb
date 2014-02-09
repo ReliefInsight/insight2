@@ -4,7 +4,7 @@
 
             <ul class="unstyled white navbar-header left">
                 <li class="logo"><a href="#" class="uppercase size-xl">Relief Insight</a></li>
-                <li class="right uppercase login">Log Out</li>
+                <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "right uppercase login" %>
                 <li class="right uppercase login">Account Settings</li>
                 <li class="right uppercase login">Dashboard</li>
             </ul>
